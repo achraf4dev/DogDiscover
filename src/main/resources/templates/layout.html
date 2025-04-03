@@ -97,11 +97,34 @@
                 </div>
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
-                    <button type="button" class="text-gray-700 hover:text-amber-600 focus:outline-none">
+                    <button type="button" id="mobile-menu-button" class="text-gray-700 hover:text-amber-600 focus:outline-none">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="/dogs" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-amber-50 rounded-md">Todos los Perros</a>
+                <div class="relative">
+                    <button id="mobile-breed-groups-button" class="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-amber-50 rounded-md inline-flex items-center justify-between">
+                        <span>Grupos de Razas</span>
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="mobile-breed-groups" class="hidden pl-4">
+                        <a href="/dogs/breed-group?breedGroup=Hound" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-amber-50 rounded-md">Sabueso</a>
+                        <a href="/dogs/breed-group?breedGroup=Terrier" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-amber-50 rounded-md">Terrier</a>
+                        <a href="/dogs/breed-group?breedGroup=Working" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-amber-50 rounded-md">Trabajo</a>
+                        <a href="/dogs/breed-group?breedGroup=Herding" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-amber-50 rounded-md">Pastoreo</a>
+                        <a href="/dogs/breed-group?breedGroup=Sporting" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-amber-50 rounded-md">Deportivo</a>
+                        <a href="/dogs/breed-group?breedGroup=Non-Sporting" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-amber-50 rounded-md">No Deportivo</a>
+                        <a href="/dogs/breed-group?breedGroup=Toy" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-amber-50 rounded-md">Toy</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -142,5 +165,22 @@
             </div>
         </div>
     </footer>
+    <!-- Mobile menu JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileBreedGroupsButton = document.getElementById('mobile-breed-groups-button');
+            const mobileBreedGroups = document.getElementById('mobile-breed-groups');
+
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileBreedGroupsButton.addEventListener('click', function() {
+                mobileBreedGroups.classList.toggle('hidden');
+            });
+        });
+    </script>
 </body>
 </html> 
